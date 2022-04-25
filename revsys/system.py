@@ -14,8 +14,9 @@ class System:
             self.board.put_stone(p, self.turn.state)
             self._game_status = self.board.game_check()
             self.turn.next(self._game_status)
+            print(f"({p.x}, {p.y}) に{self.turn}を置きました!")
         else:
-            print(f"({p.x}, {p.y}) には置けない!")
+            print(f"({p.x}, {p.y}) に{self.turn}は置けない!")
 
     def can_next(self):
         return self._game_status < 5

@@ -74,6 +74,10 @@ class Button:
         self._hasText = True
         self._update()
 
+    def change_text(self, text):
+        self._text = text
+        self._update()
+
     def set_textColor(self, color):
         self._textColor = color
         self._update()

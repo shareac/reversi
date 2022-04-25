@@ -11,6 +11,13 @@ class Turn:
         elif self._turn == State.BLACK:
             self._turn = State.WHITE
 
+    def __repr__(self):
+        if self._turn == State.BLACK:
+            return "黑"
+        if self._turn == State.WHITE:
+            return "白"
+        return "なし"
+
     """
     game check code:
       0 : when both players can put a stone somewhere legally
