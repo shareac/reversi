@@ -15,7 +15,6 @@ class Board(BoardBase, Const):
         self._board[3][4] = State.WHITE
         self._board[4][3] = State.WHITE
         self._board[4][4] = State.BLACK
-        """
         self._board = [[ 1,-1, 1,-1, 1,-1, 1,-1],
                        [ 1,-1, 1,-1, 1,-1, 1,-1],
                        [ 1,-1, 1,-1, 1,-1, 1,-1],
@@ -23,6 +22,8 @@ class Board(BoardBase, Const):
                        [ 1,-1, 1,-1, 1,-1, 1,-1],
                        [ 1,-1, 1,-1, 1,-1, 1,-1],
                        [ 1,-1, 1,-1, 1,-1, 1,-1],
+                       [ 1,-1, 1, 0, 0,-1, 1,-1]]
+        """
         """
     """
     game check code:
@@ -33,6 +34,7 @@ class Board(BoardBase, Const):
      11 : BLACK wins
       9 : WHITE wins
     """
+
     def game_check(self):
         if self.empties == 0:
             return self.result_check()
