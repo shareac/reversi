@@ -64,3 +64,6 @@ class BoardBase():
     def empties(self):
         if not self._is_updated: self._update()
         return self._empties
+
+    def status(self, p: Position):
+        return self._board[p.y][p.x]

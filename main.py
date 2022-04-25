@@ -1,20 +1,25 @@
 # main file
-from revsys import cui_game
+# from revsys import cui_game
 import pygame
-from settings import SCREEN_SIZE
+
+from settings import SCREEN_SIZE, LINE_COLOR, TILE_MAX, WIDTH
+from revsys import System, Position
 from revgra import Tile
 
 def main():
     pygame.init()
     screen = pygame.display.set_mode(SCREEN_SIZE)
 
-    tiles = [Tile(x, y) for x in range(8) for y in range(8)]
+    s = System()
+    tiles = [ Tile(n) for n in range(TILE_MAX) ]
 
     working = True
     while working:
-        screen.fill((0, 0, 0))
-
-        for tile in tiles: tile.draw(screen)
+        screen.fill(LINE_COLOR)
+        for n, tile in enumerate(tiles):
+            x = n % WIDTH
+            y = n // WIDTH
+            tile.draw(screen, s.board.status(Position(x, y)))
 
         pygame.display.update()
 
@@ -28,7 +33,6 @@ def main():
     pygame.quit()
 
 
-
 if __name__ == "__main__":
-    cui_game()
-    # main()
+    # cui_game()
+    main()
