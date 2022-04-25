@@ -2,7 +2,7 @@
 # from revsys import cui_game
 import pygame
 
-from settings import SCREEN_SIZE, EDGE_COLOR, TILE_MAX, WIDTH
+from settings import SCREEN_SIZE, EDGE_COLOR, TILE_MAX
 from revsys import System, Position
 from revgra import Tile, Side
 
